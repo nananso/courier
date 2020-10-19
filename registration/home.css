@@ -1,0 +1,738 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #123;
+}
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: darkgray;
+}
+
+li{
+    list-style: none;
+}
+
+
+/* Header Section*/
+
+header.header{  
+    position: fixed;      
+    width: 100%;   
+    top: 0;
+    left: 0;        
+    height: 30vh;    
+    background: rgb(255, 248, 220);
+    border-bottom: 1px solid #333; 
+}
+
+.topbar{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "lt rt";    
+}
+
+.lt{
+    position: relative;
+    padding-left: 3rem;
+    grid-area: lt;    
+    display: grid;
+    grid-template-rows: 2fr 1fr;    
+    grid-template-areas: "upleft"
+                         "lowerleft";
+}
+
+.rt{
+    grid-area: rt;
+    display: grid;
+    grid-template-rows: 2fr 1fr;    
+    grid-template-areas: "upright"
+                         "lowerright";
+    justify-content: flex-end;
+    padding-right: 3rem;
+}
+
+.upleft{
+    grid-area: upleft;
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.upleft a span{
+    font-size: 3rem;
+    color: rgb(122, 74, 18);
+}
+
+.upleft a{
+    text-decoration: none;
+}
+
+.lowerleft{
+    grid-area: lowerleft; 
+    position: absolute;
+}
+
+.menu a{
+    display: block;    
+    height: 64px;
+    display: flex;
+    padding: .7rem 0 0 .2rem;
+}
+.menu a:hover{
+    background: #305753;
+    color: white;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu li{
+    width: 100%;
+    min-width: 10rem;
+    text-align: center;
+    position: relative;
+}
+
+.menu li:hover .submenu > li{
+    display: block;
+    top: 0;
+}
+
+.submenu li{
+    display: none;   
+    top: 0;
+}
+
+
+.submenu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background: lightgrey;
+}
+
+nav{
+    font-size: 1.3rem;
+}
+
+.upright{
+    grid-area: upright;
+    padding-top: 3rem;
+}
+
+.signin{
+    display: flex;    
+    justify-content: space-between;
+}
+
+.signin li{
+    padding-left: 2rem;
+    font-size: 1.3rem;
+}
+
+.lowerright{
+    display: flex;
+    grid-area: lowerright;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+.lowerright button{
+    width: 10rem;
+    border-radius: 5rem;
+    background: #3f9;
+    height: 2.5rem;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+
+
+
+/* Main Section*/
+
+main.main{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-areas: "leftside centerside rightside";
+    height: 100vh;
+}
+
+.leftside{
+    grid-area: leftside;
+}
+.rightside{
+    grid-area: rightside;
+}
+
+.centerside{
+    grid-area: centerside;
+}
+
+.centerside h2{
+    text-align: center;
+    color: #ee31b8;
+    margin-top: 5rem;
+}
+
+.track{
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.track input, .track button{
+    height: 4rem;
+    font-weight: bold;
+    border: none;
+}
+
+.track input{    
+    width: 30%;
+    background: #fafafa;
+    padding-left: .5rem;
+}
+
+.track button{
+    width: 10%;
+    background: cornsilk;
+    color: green;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+
+.features{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "feature-gist feature-pic";
+}
+
+.feature-gist{
+    grid-area: feature-gist;
+}
+
+.feature-gist h3{    
+    color: darkmagenta;
+    font-size: 1.8rem;
+}
+
+.feature-gist p{    
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+.button{
+    padding: 2rem 0 0 0;
+}
+
+.button a{
+    padding: .7rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 2px solid #5052eb;
+    color: #5052eb;
+    text-decoration: none;
+    border-radius: 3rem;
+    letter-spacing: 0.75px;
+}
+
+.feature-pic{
+    grid-area: feature-pic;
+}
+
+.feature-pic img{
+    height: 18rem;
+    padding-left: 4rem;
+}
+
+/*Grey Section*/
+
+.grey-area{
+    height: 40vh;
+    background:rgba(3, 3, 3, .1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "customer info contact";
+}
+
+.grey-area > div h3{
+    margin-top: .7rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #3562ee;
+}
+
+.grey-area > div a{
+    line-height: 2rem;
+}
+
+.customer{
+    grid-area: customer;
+}
+
+.info{
+    grid-area: info;
+}
+
+.contact{
+    grid-area: contact;
+}
+
+.customer, .info, .contact{
+    padding: 2rem 0 0 3rem ;
+    color: #123;
+    font-size: .7rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: .75px;
+    text-transform: uppercase;
+    margin-bottom: 20px;    
+}
+
+
+
+
+
+
+
+
+footer.footer{
+    height: 30vh;
+    background: rgba(255, 248, 220, .3);    
+    display: grid;
+    grid-template-columns: 3.5% 93% 3.5%;
+    grid-template-areas: "footerleft footercenter footerright";
+    padding: 5rem 0 0 0;
+}
+
+.footerleft{
+    grid-area: footerleft;
+}
+
+.footercenter{
+    grid-area: footercenter;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right a{
+    margin: 0 1rem;
+}
+
+.footerright{
+    grid-area: footerright;
+}
+
+
+/*Sign In Page */
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: .2rem;
+    gap: 1rem 0;
+}
+ 
+.login h2{
+    margin: 0;
+}
+.login form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 10rem;
+    gap: .5rem;    
+    background:rgba(3, 3, 3, .05);
+    padding-top: 1rem;
+    border-top-left-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+}
+
+.login input{
+    width: 50%;
+    height: 25%;
+    padding: .2rem;
+    border: none;
+    outline: none;
+    font-weight: 500;
+}
+
+.login input[type="submit"]{
+    background: rgba(45, 56, 214, .3);
+    width: 30%;
+    margin-top: .3rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+}
+
+.login p{
+    font-size: 1.2em;
+    color: #3562ee;
+    font-family: cursive;
+}
+
+.login input[type="submit"]:hover{
+    background-color: #4556ea;
+    color: white;
+}
+
+.openbtn{
+    margin-left: 1rem;
+    padding: .3rem;
+    background: rgba(45, 56, 204, .4);
+    width: 7em;
+    height: 1.9em;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+    outline: none;
+    border: none;
+}
+
+.openbtn:hover{
+    background-color: #4556ea;
+    color: white;
+}
+
+.wrap h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+.wrap{
+    text-align: center;
+    max-width: 350px;
+    margin-top: 5rem;
+    padding: 10px;
+    background: #999;
+    border-radius: 20px;
+    margin-left: 30rem;
+    height: 30rem;
+}
+
+.wrap input{
+    margin-top: 10px;
+    width: 15rem;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border: 1px solid gray;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.wrap input[type="submit"]{
+    font-size: 16px;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    background: #cc0033;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.wrap input[type="submit"]:hover{
+    background: orange;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .7);
+}
+
+.closebtn{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.closebtn:hover{
+    color: #ccc;
+}
+
+
+
+/* Customer Page */
+
+.center{
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "manage pickup complaint";
+    grid-gap: 3rem;
+}
+.center h2{
+    margin-top: 2rem;
+    color: #3511aa;
+}
+
+.manage{
+    grid-area: manage;
+}
+
+.pickup{
+    grid-area: pickup;
+}
+
+.complaint{
+    grid-area: complaint;
+}
+
+.center form{
+    text-align: center;
+    padding-bottom: 3rem;   
+}
+
+.center > div {    
+    background: #999;    
+    height: 90%;
+}
+
+.center input{
+    width: 70%;
+    height: 35%;
+    padding: .3rem;
+    border: none;
+    outline: none;
+    font-weight: 500;
+}
+
+.center textarea{
+    resize: none;
+}
+
+
+.center input[type="submit"]{
+    padding: .3rem;
+    background: rgba(31, 24, 197, 0.4);
+    width: 7em;
+    height: 1.9em;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+}
+
+.center input[type="submit"]:hover{
+    background-color: #4556ea;
+    color: white;
+}
+
+/*---- Shipping Page ----*/
+.ship{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "shiprates createship shipstatus";
+}
+
+.shiprates{
+    grid-area: shiprates;
+    margin-right: 2rem;
+}
+
+.createship{
+    grid-area: createship;
+    margin-left: 2rem;
+}
+
+.shipstatus{
+    grid-area: shipstatus;
+}
+
+.ship h2{
+    margin-bottom: 2rem;
+}
+
+.shiprates table{
+    border-spacing: 1rem;
+    margin-left: 2rem;    
+    border-right: 1px solid rgba(8, 50, 92, .5);
+
+}
+
+.shiprates table th{
+    text-align: left;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.shiprates table th, td{
+    padding: 0 1rem;
+}
+
+.createship form{
+    margin-top: 1rem;
+    padding: .3rem 0;
+    border-right: 1px solid rgba(8, 50, 92, .5);
+}
+
+.createship label{
+    display: block;
+    color: #999;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.createship input{
+    padding: .3rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #999;
+    width: 70%;
+}
+
+.createship input[type="submit"]{
+    width: 45%;
+    margin-left: 2rem;
+    border-radius: 2rem;
+    color: #999;
+    margin-top: .3rem;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.createship input[type="submit"]:hover{
+    background-color: #4556ea;
+    color: white;
+}
+
+.shipstatus input{
+    margin: 2rem 5rem 0 5rem;
+    width: 60%;
+    height: 2rem;
+    padding-left: .2rem;
+    outline: none;
+    border-radius: .5rem;    
+}
+
+.shipstatus input[type="submit"]{
+    width: 35%;
+    margin-left: 8rem;
+    border-radius: 2rem;
+    color: #999;
+    margin-top: .3rem;
+    cursor: pointer;
+    font-size: .9rem;
+    font-weight: 700;
+    border: 1px solid #999;
+}
+
+.shipstatus input[type="submit"]:hover{
+    background-color: #4556ea;
+    color: white;
+}
+
+.admin{
+    display: flex;
+    height: 80vh;
+    margin-top: 12rem;
+}
+
+.tabs{
+    background: #3511aa;
+    padding: 2rem 0;
+}
+
+.dbarea{
+    padding: 2rem 0;
+    margin: -1rem 1rem;
+}
+
+.tabs label{
+    margin: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: #3562ee;
+    padding: .7rem 3rem .7rem .7rem;
+    border-radius: .3rem;
+}
+
+.tabs button{
+    display: block;
+    margin: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #35a;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: .3rem;
+    width: 8rem;
+    padding: .7rem 0.3rem;
+    text-align: left;
+}
+
+.tabs button:hover{
+    color: #fff;
+    background: #3562ee;
+}
+
+.dbarea h2{
+    font-size: 2rem;
+    color: rgba(95, 93, 93, 0.7);
+}
+
+.dbarea label{
+    display: block;
+    width: 78vw;
+    padding: .6rem;
+    background: lightcyan;
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    color: rgb(84, 238, 84);
+}
+
+.dbarea table, th, tr{
+    width: 78vw;
+    padding: .1rem;
+    background: lightgrey;
+    margin-top: 1rem;
+    border-radius: .3rem;
+    text-align: left;
+    padding-top: .25rem;
+    font-size: 1rem;
+    color: #222;
+}
+
